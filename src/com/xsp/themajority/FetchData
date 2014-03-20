@@ -1,0 +1,47 @@
+package com.xsp.themajority;
+
+public class FetchData{
+
+    private String urlPrefix = "http:localhost:8080/";
+    
+
+    public byte[] getUrlBytes(String urlSpec) throws IOException {
+        URL url = new URL(urlSpec);
+        HttpURLConnection connection = (HttpURLConnection)url.openConnection();
+
+        try {
+            ByteArrayOutputStream out = new ByteArrayOutputStream();
+            InputStream in = connection.getInputStream();
+            
+            if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
+                return null;
+            }
+
+            int bytesRead = 0;
+            byte[] buffer = new byte[1024];
+            while ((bytesRead = in.read(buffer)) > 0) {
+                out.write(buffer, 0, bytesRead);
+            }
+            out.close();
+            return out.toByteArray();
+        } finally {
+            connection.disconnect();
+        }
+    }
+
+    String getUrl(String urlSpec) throws IOException {
+        return new String(getUrlBytes(urlSpec));
+    }
+    
+    public String getSomething(String method, String [] params){
+        Object url = Uri.parse(urlPrefix+method).buildUpon();
+        for(int i=0;i<params.length;i+=2){
+            url.appendQueryParameter(params[i],params[i+1]);
+        }
+        String urlString = url.build().toString();
+        String result = getUrl(urlString);
+        return result;
+    }
+    
+
+}
