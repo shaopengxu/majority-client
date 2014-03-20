@@ -15,6 +15,8 @@ public class CommonUIFragment extends Fragment {
 		View rootView = inflater.inflate(R.layout.fragment_selection_common,
 				container, false);
 		// if this view a viewgroup?
+		//ViewGroup vg = (ViewGroup)rootView;
+		//vg.addView(...)
 		// add a viewlist or findviewbyid from config xml
 		// TODO get the host list , show it
 
