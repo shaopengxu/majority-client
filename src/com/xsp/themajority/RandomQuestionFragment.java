@@ -15,7 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class LaunchUIFragment extends Fragment {
+public class RandomQuestionFragment extends Fragment {
 
 	private String question = "Do you have money";
 	private List<String> answers = new ArrayList<String>();
