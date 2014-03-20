@@ -14,9 +14,12 @@ public class CommonUIFragment extends Fragment {
 
 		View rootView = inflater.inflate(R.layout.fragment_selection_common,
 				container, false);
+		// TODO get the host list , show it
 
 		return rootView;
 	}
+	
+
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
