@@ -27,6 +27,10 @@ public class ResultActivity extends Activity {
 		LayoutInflater inflater = getLayoutInflater();
 		ViewGroup layout = (ViewGroup) inflater.inflate(
 				R.layout.activity_result, null);
+				
+				// Get the message from the intent
+    //Intent intent = getIntent();
+    // String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		String questionContent = "dddd";
 		List<String> answers = new ArrayList<String>();
 		answers.add("ϲ");
