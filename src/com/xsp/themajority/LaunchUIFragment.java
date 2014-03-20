@@ -42,6 +42,7 @@ public class LaunchUIFragment extends Fragment {
 					long arg3) {
 				Intent intent = new Intent();
 				intent.setClass(getActivity(), ResultActivity.class);
+				//intent.putExtra(..,..);
 				startActivity(intent);
 
 			}
